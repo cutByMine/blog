@@ -5,7 +5,7 @@ module.exports = async (req, res) => {
   console.log(process.env, process.env.FAUNA_SECRET_KEY, 'process.env.FAUNA_SECRET_KEY')
   const q = faunadb.query
   const client = new faunadb.Client({
-    secret: process.env.FAUNA_SECRET_KEY,
+    secret: 'fnAFJ3abIkAAUVUFi8d5Ic2Tm2ZyvAX605zFKjMG',
     domain: 'db.fauna.com',
   })
 
