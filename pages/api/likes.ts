@@ -2,6 +2,7 @@ import faunadb from 'faunadb'
 import { getMentionsForSlug } from 'lib/webmentions'
 
 module.exports = async (req, res) => {
+  console.log(process.env, process.env.FAUNA_SECRET_KEY, 'process.env.FAUNA_SECRET_KEY')
   const q = faunadb.query
   const client = new faunadb.Client({
     secret: process.env.FAUNA_SECRET_KEY,
