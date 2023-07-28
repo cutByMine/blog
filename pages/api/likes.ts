@@ -2,7 +2,6 @@ import faunadb from 'faunadb'
 import { getMentionsForSlug } from 'lib/webmentions'
 
 module.exports = async (req, res) => {
-  console.log(process.env, process.env.FAUNA_SECRET_KEY, 'process.env.FAUNA_SECRET_KEY')
   const q = faunadb.query
   const client = new faunadb.Client({
     secret: 'fnAFJ3abIkAAUVUFi8d5Ic2Tm2ZyvAX605zFKjMG',
@@ -15,16 +14,33 @@ module.exports = async (req, res) => {
       message: 'Article slug not provided',
     })
   }
-
   // Check and see if the doc exists.
   try {
-    const doesDocExist = await client.query(q.Exists(q.Match(q.Index('likes_by_slug'), slug)))
-
+    const doesDocExist = await client.query(q.Exists(q.Collection('likes')))
     if (!doesDocExist) {
-      await client.query(
-        q.Create(q.Collection('likes'), {
-          data: { slug, likes: 0 },
-        }),
+      await q.Do(
+        client.query(q.CreateCollection({ name: 'likes' })),
+        client.query(
+          q.Create(q.Collection('likes'), {
+            data: { slug, likes: 0 },
+          }),
+        ),
+        client.query(
+          q.CreateIndex({
+            name: 'likes_by_slug',
+            source: q.Collection('likes'),
+            terms: [
+              {
+                field: ['data', 'slug'],
+              },
+            ],
+            values: [
+              {
+                field: ['ref'],
+              },
+            ],
+          }),
+        ),
       )
     }
   } catch (error) {
@@ -36,7 +52,6 @@ module.exports = async (req, res) => {
 
   // Fetch the document for-real
   const document = (await client.query(q.Get(q.Match(q.Index('likes_by_slug'), slug)))) as documentType
-
   // Fetch webmentions
   const numberOfmentions = await getMentionsForSlug(slug)
 
