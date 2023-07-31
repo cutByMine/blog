@@ -4,8 +4,11 @@ import { getMentionsForSlug } from 'lib/webmentions'
 module.exports = async (req, res) => {
   const q = faunadb.query
   const client = new faunadb.Client({
-    secret: 'fnAFJ3abIkAAUVUFi8d5Ic2Tm2ZyvAX605zFKjMG',
+    secret: process.env.FAUNA_SECRET_KEY || 'fnAFJ3abIkAAUVUFi8d5Ic2Tm2ZyvAX605zFKjMG',
     domain: 'db.fauna.com',
+    headers: {
+      'Access-Control-Allow-Origin': '*',
+    },
   })
 
   const { slug } = req.query
