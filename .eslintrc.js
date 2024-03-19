@@ -32,6 +32,9 @@ module.exports = {
     'import/extensions': 0,
     '@typescript-eslint/explicit-module-boundary-types': 0,
     'no-underscore-dangle': 0,
+    'react/self-closing-comp': 0,
+    'no-unused-vars': 1,
+    'dot-notation': 0,
   },
   globals: {
     JSX: true,

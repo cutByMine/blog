@@ -1,2 +1,2 @@
 User-agent: *
-Sitemap: https://giscafer.com/sitemap.xml
+Sitemap: https://gymsummer.com/sitemap.xml

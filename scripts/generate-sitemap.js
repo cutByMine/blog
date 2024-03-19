@@ -18,7 +18,7 @@ const prettier = require('prettier')
 
                 return `
                         <url>
-                            <loc>${`https://giscafer.com${route}`}</loc>
+                            <loc>${`https://gymsummer.com${route}`}</loc>
                         </url>
                     `
               })

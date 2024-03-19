@@ -1,24 +1,19 @@
 import { DefaultSeo } from 'next-seo'
 
 const config = {
-  title: 'Nicky Lao - Frontend Developer & Designer',
+  title: '戒修 - 戒除恶念、修身养性',
   description: '123',
   openGraph: {
     type: 'website',
     locale: 'zh_CN',
-    url: 'https://blog.gymsummer.com',
-    site_name: 'giscafer | Nicky Lao',
+    url: 'https://gymsummer.com',
+    site_name: '戒修',
     images: [
       {
-        url: 'https://giscafer.com/avatar.png',
-        alt: 'Nicky Lao',
+        url: 'https://gymsummer.com/avatar.png',
+        alt: '戒修',
       },
     ],
-  },
-  twitter: {
-    handle: '@giscafer',
-    site: '@giscafer',
-    cardType: 'summary_large_image',
   },
 }
 

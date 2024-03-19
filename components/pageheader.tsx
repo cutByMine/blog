@@ -7,7 +7,7 @@ type PageHeaderProps = {
   compact?: boolean
 }
 
-const PageHeader = ({ title, description, children, compact }: PageHeaderProps): JSX.Element => (
+const PageHeader = ({ title, description, children = null, compact }: PageHeaderProps): JSX.Element => (
   <div className={compact ? styles.wrapperCompact : styles.wrapper}>
     <h1 className={styles.title}>{title}</h1>
     {description && <p className={styles.description}>{description}</p>}

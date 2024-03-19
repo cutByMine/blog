@@ -93,9 +93,9 @@ const Post = ({ post, related, githubUser, githubProject }: PostProps): JSX.Elem
       })
     : null
 
-  const seoTitle = `${post.title} | Nicky Lao`
+  const seoTitle = `${post.title} | 戒修`
   const seoDesc = `${post.summary}`
-  const url = `https://giscafer.com/blog/${post.slug}`
+  const url = `https://gymsummer.com/blog/${post.slug}`
 
   return (
     <Page>
@@ -110,23 +110,20 @@ const Post = ({ post, related, githubUser, githubProject }: PostProps): JSX.Elem
           images: [
             {
               url: post.og
-                ? `https://giscafer.com${post.og}`
-                : `https://og-image.giscafer.vercel.app/${encodeURIComponent(post.title)}?desc=${encodeURIComponent(
+                ? `https://gymsummer.com${post.og}`
+                : `https://og-image.gymsummer.vercel.app/${encodeURIComponent(post.title)}?desc=${encodeURIComponent(
                     seoDesc,
                   )}&theme=dark.png`,
               alt: post.title,
             },
           ],
-          site_name: 'giscafer | Nicky Lao',
+          site_name: '戒修',
           type: 'article',
           article: {
             publishedTime: post.publishedAt,
             modifiedTime: post.updatedAt,
-            authors: ['https://giscafer.com'],
+            authors: ['https://gymsummer.com'],
           },
-        }}
-        twitter={{
-          cardType: 'summary_large_image',
         }}
       />
 

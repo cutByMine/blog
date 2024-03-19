@@ -7,9 +7,8 @@ import styles from './header.module.scss'
 
 const links = [
   { name: 'Home', path: '/' },
-  { name: 'About', path: '/about' },
-  { name: 'Blog', path: '/blog' },
-  { name: 'Map', path: 'http://map.giscafer.com', target: '_blank' },
+  { name: '日记', path: '/blog' },
+  // { name: 'Map', path: 'http://map.gymsummer.com', target: '_blank' },
 ]
 
 const Header = (): JSX.Element => {
@@ -21,7 +20,7 @@ const Header = (): JSX.Element => {
         <div className={styles.container}>
           <Link href="/">
             <a className={styles.logo}>
-              <Image src={avatar} alt="Nicky Lao" layout="fixed" width="45" height="45" priority placeholder="blur" />
+              <Image src={avatar} alt="戒修" layout="fixed" width="45" height="45" priority placeholder="blur" />
             </a>
           </Link>
           <nav className={styles.nav}>

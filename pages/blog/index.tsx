@@ -32,7 +32,7 @@ const Blog = ({ posts, tagList }: BlogProps): JSX.Element => {
     debounce((value: string) => gtag.search(value), 500),
     [],
   )
-  const seoTitle = 'Blog | Nicky Lao'
+  const seoTitle = 'Blog | 戒修'
   const seoDesc = '关于大前端的技术文章，包含且不限于 React、Angular、React Native 等。'
   const filteredPosts = posts
     .sort((a, b) => new Date(b.publishedAt).getTime() - new Date(a.publishedAt).getTime())
@@ -56,9 +56,9 @@ const Blog = ({ posts, tagList }: BlogProps): JSX.Element => {
         description={seoDesc}
         openGraph={{
           title: seoTitle,
-          url: `https://giscafer.com/blog/`,
+          url: `https://gymsummer.com/blog/`,
           description: seoDesc,
-          site_name: 'giscafer | Nicky Lao',
+          site_name: '戒修',
         }}
         twitter={{
           cardType: 'summary_large_image',

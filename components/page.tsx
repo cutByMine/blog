@@ -10,14 +10,9 @@ type PageProps = {
 
 const footerLinks = [
   { name: 'Home', url: '/' },
-  { name: 'GitHub', url: 'https://github.com/giscafer', target: '_blank' },
-  { name: '旅游地图', url: 'http://map.giscafer.com', target: '_blank' },
+  { name: 'GitHub', url: 'https://github.com/gymsummer', target: '_blank' },
 
   { name: 'Blog', url: '/blog' },
-  { name: '语雀', url: 'https://www.yuque.com/giscafer', target: '_blank' },
-  { name: '知乎', url: 'https://www.zhihu.com/people/giscafer', target: '_blank' },
-  { name: 'About', url: '/about' },
-  { name: '微博', url: 'https://weibo.com/laohoubin', target: '_blank' },
   { name: 'RSS', url: '/feed.xml', target: '_blank' },
 ]
 
@@ -49,8 +44,8 @@ const Page = ({ children }: PageProps): JSX.Element => (
         })}
       </ul>
       <div className={styles.bottomInfo}>
-        <p className={styles.copyright}>&copy; Nicky Lao {new Date().getFullYear()}</p>
-        <img src="https://visitor-badge.glitch.me/badge?page_id=giscafer.com" alt="访问人数" />
+        <p className={styles.copyright}>&copy; 戒修 {new Date().getFullYear()}</p>
+        <img src="https://visitor-badge.glitch.me/badge?page_id=gymsummer.com" alt="访问人数" />
       </div>
     </footer>
   </div>

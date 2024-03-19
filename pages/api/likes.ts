@@ -6,9 +6,6 @@ module.exports = async (req, res) => {
   const client = new faunadb.Client({
     secret: process.env.FAUNA_SECRET_KEY || 'fnAFJ3abIkAAUVUFi8d5Ic2Tm2ZyvAX605zFKjMG',
     domain: 'db.fauna.com',
-    headers: {
-      'Access-Control-Allow-Origin': '*',
-    },
   })
 
   const { slug } = req.query
@@ -19,15 +16,11 @@ module.exports = async (req, res) => {
   }
   // Check and see if the doc exists.
   try {
-    const doesDocExist = await client.query(q.Exists(q.Collection('likes')))
-    if (!doesDocExist) {
+    const doesCollExist = await client.query(q.Exists(q.Collection('likes')))
+    if (!doesCollExist) {
+      await client.query(q.CreateCollection({ name: 'likes' }))
       await q.Do(
         client.query(q.CreateCollection({ name: 'likes' })),
-        client.query(
-          q.Create(q.Collection('likes'), {
-            data: { slug, likes: 0 },
-          }),
-        ),
         client.query(
           q.CreateIndex({
             name: 'likes_by_slug',
@@ -44,6 +37,14 @@ module.exports = async (req, res) => {
             ],
           }),
         ),
+      )
+    }
+    const doesDocExist = await client.query(q.Exists(q.Match(q.Index('likes_by_slug'), slug)))
+    if (!doesDocExist) {
+      await client.query(
+        q.Create(q.Collection('likes'), {
+          data: { slug, likes: 0 },
+        }),
       )
     }
   } catch (error) {

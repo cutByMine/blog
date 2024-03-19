@@ -6,9 +6,9 @@ const matter = require('gray-matter')
 
 async function generate() {
   const feed = new RSS({
-    title: 'Nicky Lao',
-    site_url: 'https://giscafer.com',
-    feed_url: 'https://giscafer.com/feed.xml',
+    title: '戒修',
+    site_url: 'https://gymsummer.com',
+    feed_url: 'https://gymsummer.com/feed.xml',
   })
 
   const posts = await fs.readdir(path.join(__dirname, '..', 'data', 'blog'))
@@ -20,7 +20,7 @@ async function generate() {
 
       feed.item({
         title: frontmatter.data.title,
-        url: 'https://giscafer.com/blog/' + name.replace(/\.mdx?/, ''),
+        url: 'https://gymsummer.com/blog/' + name.replace(/\.mdx?/, ''),
         date: frontmatter.data.publishedAt,
         description: frontmatter.data.summary,
       })

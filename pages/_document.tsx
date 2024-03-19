@@ -23,9 +23,9 @@ export default class MyDocument extends Document {
             }}
           />
           <meta name="google-site-verification" content="JPPz1wsoh_EhDrgTk6InHZrGEricNOa6zDJCTbIxe20" />
-          <link rel="webmention" href="https://webmention.io/giscafer.com/webmention" />
-          <link rel="pingback" href="https://webmention.io/giscafer.com/xmlrpc" />
-          <link href="https://github.com/giscafer" rel="me" />
+          <link rel="webmention" href="https://webmention.io/gymsummer.com/webmention" />
+          <link rel="pingback" href="https://webmention.io/gymsummer.com/xmlrpc" />
+          <link href="https://github.com/gymsummer" rel="me" />
         </Head>
         <body>
           <Main />
