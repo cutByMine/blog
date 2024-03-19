@@ -5,7 +5,7 @@ import Image from 'next/image'
 import avatar from 'public/avatar.png'
 import styles from './header.module.scss'
 
-const links = [
+const links: any = [
   { name: 'Home', path: '/' },
   { name: '日记', path: '/blog' },
   // { name: 'Map', path: 'http://map.gymsummer.com', target: '_blank' },
