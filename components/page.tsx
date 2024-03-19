@@ -10,7 +10,6 @@ type PageProps = {
 
 const footerLinks = [
   { name: 'Home', url: '/' },
-  { name: 'GitHub', url: 'https://github.com/gymsummer', target: '_blank' },
 
   { name: 'Blog', url: '/blog' },
   { name: 'RSS', url: '/feed.xml', target: '_blank' },

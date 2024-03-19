@@ -33,7 +33,7 @@ const Blog = ({ posts, tagList }: BlogProps): JSX.Element => {
     [],
   )
   const seoTitle = 'Blog | 戒修'
-  const seoDesc = '关于大前端的技术文章，包含且不限于 React、Angular、React Native 等。'
+  const seoDesc = '日记收录起于2024年3月4日，止于还清负债。目前只提供标题查询，如0304、0315'
   const filteredPosts = posts
     .sort((a, b) => new Date(b.publishedAt).getTime() - new Date(a.publishedAt).getTime())
     .filter(({ title, summary, tags }) => {
