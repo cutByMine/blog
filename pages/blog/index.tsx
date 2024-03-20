@@ -37,7 +37,8 @@ const Blog = ({ posts, tagList }: BlogProps): JSX.Element => {
   const filteredPosts = posts
     .sort((a, b) => new Date(b.publishedAt).getTime() - new Date(a.publishedAt).getTime())
     .filter(({ title, summary, tags }) => {
-      const searchString = `${title.toLowerCase()} ${summary.toLowerCase()} ${tags?.join(' ')}`
+      console.log(typeof title, 'ttttttttttt')
+      const searchString = `${`${title}`.toLowerCase()} ${`${summary}`.toLowerCase()} ${tags?.join(' ')}`
       return searchString.includes(currentSearch.toLowerCase())
     })
 
