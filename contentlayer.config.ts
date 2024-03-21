@@ -3,7 +3,8 @@ import readingTime from 'reading-time'
 import rehypePrism from 'rehype-prism-plus'
 import codeTitle from 'remark-code-titles'
 
-const imgReg = new RegExp(/https:\/\/(.*)\.(png|jpeg|gif|svg|jpg)/)
+// const imgReg = new RegExp(/https:\/\/(.*)\.(png|jpeg|gif|svg|jpg)/)
+const imgReg = new RegExp(/(https:\/\/github.com\/cutByMine\/blog\/assets)/)
 
 const getCoverImg = doc => {
   const { raw } = doc.body
@@ -12,7 +13,7 @@ const getCoverImg = doc => {
   if (match) {
     return match[0]
   }
-  return '/blog/default/image.png'
+  return '/blog/default/og.png'
 }
 
 const getSlug = doc => {
