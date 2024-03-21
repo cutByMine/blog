@@ -13,7 +13,7 @@ const getCoverImg = doc => {
   if (match) {
     return match[0]?.replace(')', '')
   }
-  return '/blog/default/default.png'
+  return '/blog/default/image.png'
 }
 
 const getSlug = doc => {
