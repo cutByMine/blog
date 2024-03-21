@@ -31,8 +31,8 @@ jobs:
 
       - name: Git config 🔧
         run: |
-          git config --global user.name "SubinY"
-          git config --global user.email "490101299@qq.com"
+          git config --global user.name "cut"
+          git config --global user.email "1729904998@qq.com"
 
       - name: Display runtime info ✨
         run: |

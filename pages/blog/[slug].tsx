@@ -184,7 +184,7 @@ export const getStaticPaths: GetStaticPaths = async () => {
 }
 
 export const getStaticProps: GetStaticProps = async ({ params }) => {
-  const { GH_USER = 'SubinY', GH_PROJECT_NAME = 'blog' } = process.env
+  const { GH_USER = 'cutByMine', GH_PROJECT_NAME = 'blog' } = process.env
   const post = allPosts.find(p => p.slug === params?.slug)
   const related = allPosts
     /* remove current post */

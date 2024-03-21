@@ -37,7 +37,7 @@ ${body.replace(/<br \/>/g, '\n')}
 function main() {
   const filePath = path.resolve(__dirname, blogOutputPath)
   // 只查询自己的issues，避免别人创建的也更新到博客
-  issueInstance.listIssues({ creator: 'SubinY' }).then(({ data }) => {
+  issueInstance.listIssues({ creator: 'cutByMine' }).then(({ data }) => {
     let successCount = 0
     fs.ensureDirSync(filePath)
     fs.emptyDirSync(filePath)
