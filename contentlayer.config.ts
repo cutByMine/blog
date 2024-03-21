@@ -4,16 +4,16 @@ import rehypePrism from 'rehype-prism-plus'
 import codeTitle from 'remark-code-titles'
 
 // const imgReg = new RegExp(/https:\/\/(.*)\.(png|jpeg|gif|svg|jpg)/)
-const imgReg = new RegExp(/(https:\/\/github.com\/cutByMine\/blog\/assets)/)
+const imgReg = new RegExp(/\(https:\/\/github.com\/cutByMine\/blog\/assets).*?\)/)
 
 const getCoverImg = doc => {
   const { raw } = doc.body
 
   const match = raw.match(imgReg)
   if (match) {
-    return match[0]
+    return match[0]?.replace(')', '')
   }
-  return '/blog/default/og.png'
+  return '/blog/default/default.png'
 }
 
 const getSlug = doc => {
