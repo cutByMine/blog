@@ -23,9 +23,24 @@ const experience = [
   },
 ]
 
+const handleClick = async () => {
+  const res = await fetch('/api/read-diary/route', {
+    body: JSON.stringify({
+      shareUrl: 'https://note.youdao.com/s/6Poqt1pP',
+    }),
+    headers: {
+      'Content-Type': 'application/json',
+    },
+    method: 'POST',
+  })
+}
+
 const Home = (): JSX.Element => (
   <Page>
     <PageHeader title={headerTitle} description={headerDescription} />
+    <button type="button" onClick={handleClick}>
+      订阅
+    </button>
     <TimeLine items={experience} />
   </Page>
 )

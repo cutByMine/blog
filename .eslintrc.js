@@ -35,6 +35,7 @@ module.exports = {
     'react/self-closing-comp': 0,
     'no-unused-vars': 1,
     'dot-notation': 0,
+    'no-plusplus': 0,
   },
   globals: {
     JSX: true,
