@@ -38,9 +38,6 @@ const handleClick = async () => {
 const Home = (): JSX.Element => (
   <Page>
     <PageHeader title={headerTitle} description={headerDescription} />
-    <button type="button" onClick={handleClick}>
-      订阅
-    </button>
     <TimeLine items={experience} />
   </Page>
 )
